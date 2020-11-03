@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <form [formGroup]="signInForm" >
+
+        <!-- username -->
+        <div class="form-group">
+            <label><b>Username</b></label>
+            <input type="text" class="form-control" placeholder="Your username" formControlName="username"/>
+            <span class="text-danger" *ngIf="signInForm.get('username').errors?.required && signInForm.get('username').dirty">This field is required</span>
+        </div>
+
+        <!-- password -->
+        <div class="form-group">
+            <label><b>Password</b></label>
+            <input type="password" class="form-control" placeholder="Your password" formControlName="password"/>
+            <span class="text-danger" *ngIf="signInForm.get('password').errors?.required && signInForm.get('password').dirty">This field is required</span>
+        </div>
+
+        <!-- <input type="submit" value="Submit"/> -->
+        <button type="submit" value="Submit" (click)="logIn()" > Login </button>
+
+    </form>
+<!-- 
+    <input type="submit" value="Submit" /> -->
+
+    <p>
+        {{ signInForm.value | json }} 
+    </p>
+</div>
+
+<router-outlet></router-outlet>

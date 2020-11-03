@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Specialty</th>
+        <th scope="col">Description</th>
+        <th scope="col">Approve</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let doctor of doctors;let i = index">
+            <tr>
+                <th scope="row"> {{ i+1 }} </th>
+                <td> {{ doctor.name }} </td>
+                <td> {{ doctor.username }} </td>
+                <td> {{ doctor.specialty }} </td>
+                <td> {{ doctor.description }} </td> 
+                <td><button value="Approve" (click)="clickApprove(doctor.username)"> + </button></td>
+            </tr>
+    </tbody>
+  </table>
+
+<router-outlet></router-outlet>

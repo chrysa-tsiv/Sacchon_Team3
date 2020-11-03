@@ -1,0 +1,34 @@
+
+<h2> id =  {{ id }} </h2>
+<h1> Your patients: </h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th> 
+        <th scope="col">Height</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Medical history</th>
+        <th scope="col">Actions</th>
+  
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let patient of patients;let i = index">
+            <tr>
+                <th scope="row"> {{ i+1 }} </th>
+                <td> {{ patient.name }} </td>
+                <td> {{ patient.username}} </td>
+                <td> {{ patient.height}} </td>
+                 <td> {{ patient.weight}} </td>
+                 <td> {{ patient.history}} </td>
+                 <button value="Add" class="btn btn-info" (click)="clickAdd(patient.username)"> View progress </button>
+                <!-- <td><a href="doctorprofile/mypatients/patient">View progress</a></td> -->
+                
+            </tr>
+    </tbody>
+  </table>
+
+<router-outlet></router-outlet>

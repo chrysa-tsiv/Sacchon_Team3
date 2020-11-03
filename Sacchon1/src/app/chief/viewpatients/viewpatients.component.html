@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Full name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Height</th>
+        <th scope="col">Weight</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let patient of patients;let i = index">
+            <tr>
+                <th scope="row"> {{ i+1 }} </th>
+                <td> {{ patient.name }} </td>
+                <td> {{ patient.username }} </td>
+                <td> {{ patient.gender }} </td>
+                <td> {{ patient.dob }} </td>
+                <td> {{ patient.height }} </td>
+                <td> {{ patient.weight }} </td>
+            </tr>
+    </tbody>
+  </table>
+
+<router-outlet></router-outlet>

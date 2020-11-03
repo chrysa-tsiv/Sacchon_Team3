@@ -1,0 +1,80 @@
+<div class="container mt-5"> 
+    <form [formGroup]="DrSignUpForm" (submit)="formSubmit(DrSignUpForm)">
+
+        <!-- full name -->
+        <div class="form-group">
+            <label><b>Full name</b></label>
+            <input type="text" class="form-control" placeholder="Your full name" formControlName="name"/>
+            <span class="text-danger" *ngIf="DrSignUpForm.get('name').errors?.required && DrSignUpForm.get('name').dirty">This field is required</span>
+        </div>
+
+        <!-- username -->
+        <div class="form-group">
+            <label><b>Username</b></label>
+            <input type="text" class="form-control" placeholder="Your username" formControlName="username"/>
+            <span class="text-danger" *ngIf="DrSignUpForm.get('username').errors?.required && DrSignUpForm.get('username').dirty">This field is required</span>
+        </div>
+
+        <!-- password -->
+        <div class="form-group">
+            <label><b>Password</b></label>
+            <input type="password" class="form-control" placeholder="Your password" formControlName="password"/>
+            <span class="text-danger" *ngIf="DrSignUpForm.get('password').errors?.required && DrSignUpForm.get('password').dirty">This field is required</span>
+        </div>
+
+
+        <!-- specialty -->
+        <div class="form-group">
+            <label><b>Specialty</b></label>
+            <div>
+                <label>Pathologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="PATHOLOGY">
+            </div>
+            <div>
+                <label>Endocrinologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="DIABETOLOGIST">
+            </div>
+            <div>
+                <label>Cardiologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="CARDIOLOGY">
+            </div>
+            <div>
+                <label>Dermatologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="DERMATOLOGY">
+            </div>
+            <div>
+                <label>Immunologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="IMMUNOLOGY">
+            </div>
+            <div>
+                <label>Pulmonologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="PULMONOLOGY">
+            </div>
+            <div>
+                <label>Neurologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="NEUROLOGY">
+            </div>
+            <div>
+                <label>Ophthalmologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="OPHTHALMOLOGY">
+            </div>
+        </div>
+
+        <!-- about you -->
+        <label><b>Description</b></label>
+        <div class="form-group">
+            <textarea class="form-group" type="text-area" name="description" class="form-control" formControlName="description" placeholder="Your medical history"></textarea>
+        </div>
+
+        <!-- <input type="submit" value="Submit" /> -->
+        <button type="submit" value="Submit" > Submit </button>
+
+    </form>
+
+    <p>
+        {{ DrSignUpForm.value | json }} 
+    </p>
+    
+</div>
+
+<router-outlet></router-outlet>

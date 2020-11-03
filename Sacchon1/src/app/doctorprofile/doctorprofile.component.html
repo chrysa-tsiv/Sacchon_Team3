@@ -1,0 +1,48 @@
+<h1>Hello, Dr {{ drusername }}</h1>
+<p><b>Your personal information:</b></p>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">ID</th>
+        <th scope="col">Specialty</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ drname }}</td>
+        <td>{{ drusername }}</td>
+        <td>{{ id }}</td>
+        <td>{{ specialty }}</td>
+        <td>{{ description }} </td>
+      </tr>
+    </tbody>
+  </table>
+
+<div>
+    <h2><a href="doctorprofile/drcalendar">My calendar</a></h2>
+</div>
+
+<div>
+    <h2><a href="doctorprofile/mypatients">My patients</a></h2>
+</div>
+
+<div>
+    <h2><a href="doctorprofile/addnewpatient">Add new patients</a></h2>
+</div>
+
+<div>
+    <h2><a href="doctorprofile/editdoctorinfo">Edit my info</a></h2>
+</div>
+
+<div>
+    <h2><a href="doctorprofile/deactivateaccount">Deactivate my account</a></h2>
+</div>
+
+
+
+
+<router-outlet></router-outlet>

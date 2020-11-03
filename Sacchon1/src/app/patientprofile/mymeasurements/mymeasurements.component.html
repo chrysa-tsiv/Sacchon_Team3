@@ -1,0 +1,28 @@
+<h1> id =  {{ id }} </h1>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Glucose Level (in mg/dL)</th>
+        <th scope="col">Carbohydrates (in grams)</th>
+        <th scope="col">Medication</th>
+        <th scope="col">Date</th>
+        <th scope="col">ID</th>
+      </tr>
+    </thead>
+  
+    <tbody *ngFor="let measurement of measurements;let i = index">
+            <tr>
+                <th scope="row"> {{ i+1 }} </th>
+                <td> {{ measurement.glucoseLevel }} (mg/dL)</td>
+                <td> {{ measurement.carbIntake }} (gr)</td>
+                <td> {{ measurement.meds }} </td>
+                <td> {{ measurement.date }} </td>
+                <td> {{ measurement.patientID }} </td>
+            </tr>
+    </tbody>
+  </table>
+  <button type="submit" value="Submit" (click)="goToPage('patientprofile/mymeasurements/myaverages')" > View averages </button>
+
+<router-outlet></router-outlet>

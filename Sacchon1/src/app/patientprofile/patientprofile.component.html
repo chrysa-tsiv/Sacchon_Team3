@@ -1,0 +1,51 @@
+<h1>Hello, {{ username }}</h1>
+<p><b>Your personal information:</b></p>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">ID</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Date of birth</th>
+        <th scope="col">Height</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Medical History</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ name }} </td>
+        <td>{{ username }}</td>
+        <td>{{ id }}</td>
+        <td>{{ gender }}</td>
+        <td>{{ dob }}</td>
+        <td>{{ height }}</td>
+        <td>{{ weight }}</td>
+        <td>{{ history }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<div>
+    <h2><a href="patientprofile/calendar">My consultations</a></h2>
+</div>
+
+<div>
+    <h2><a href="patientprofile/addmeasurement">Add measurement</a></h2>
+</div>
+
+<div>
+  <h2><a href="patientprofile/mymeasurements">View measurements</a></h2>
+</div>
+
+<div>
+    <h2><a href="patientprofile/editpatientinfo">Edit my info</a></h2>
+</div>
+
+<div>
+    <h2><a href="patientprofile/deactivateaccount">Deactivate my account</a></h2>
+</div>
+
+<router-outlet></router-outlet>

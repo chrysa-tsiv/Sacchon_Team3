@@ -1,0 +1,106 @@
+<p>Your ID: {{ id1 }}</p>
+<!-- <p><b>Your personal information:</b></p>
+    
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Full Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">ID</th>
+        <th scope="col">Specialty</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ drname1 }} </td>
+        <td>{{ username1 }}</td>
+        <td>{{ id1 }}</td>
+        <td>{{ specialty1 }}</td>
+        <td>{{ description1 }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <h3>Edit your info below:</h3>
+<div class="container mt-5">
+    <form [formGroup]="editDoctorForm" (submit)="formEdit(editDoctorForm)">
+
+        <!-- full name -->
+        <div class="form-group">
+            <label><b>Full name</b></label>
+            <input type="text" class="form-control" placeholder="Your full name" formControlName="name"/>
+            <span class="text-danger" *ngIf="editDoctorForm.get('name').errors?.required && editDoctorForm.get('name').dirty">This field is required</span>
+        </div>
+
+        <!-- username -->
+        <div class="form-group">
+            <label><b>Username</b></label>
+            <input type="text" class="form-control" placeholder="Your username" formControlName="username"/>
+            <span class="text-danger" *ngIf="editDoctorForm.get('username').errors?.required && editDoctorForm.get('username').dirty">This field is required</span>
+        </div>
+
+        <!-- password -->
+        <div class="form-group">
+            <label><b>Password</b></label>
+            <input type="password" class="form-control" placeholder="Your password" formControlName="password"/>
+            <span class="text-danger" *ngIf="editDoctorForm.get('password').errors?.required && editDoctorForm.get('password').dirty">This field is required</span>
+        </div>
+
+        <!-- specialty -->
+        <div class="form-group">
+            <label><b>Specialty</b></label>
+            <div>
+                <label>Pathologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="PATHOLOGY">
+            </div>
+            <div>
+                <label>Endocrinologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="DIABETOLOGIST">
+            </div>
+            <div>
+                <label>Cardiologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="CARDIOLOGY">
+            </div>
+            <div>
+                <label>Dermatologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="DERMATOLOGY">
+            </div>
+            <div>
+                <label>Immunologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="IMMUNOLOGY">
+            </div>
+            <div>
+                <label>Pulmonologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="PULMONOLOGY">
+            </div>
+            <div>
+                <label>Neurologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="NEUROLOGY">
+            </div>
+            <div>
+                <label>Ophthalmologist</label>
+                <input class="form-control" formControlName="specialty" type="radio" id="" name="specialty" value="OPHTHALMOLOGY">
+            </div>
+
+
+            <span class="text-danger" *ngIf="editDoctorForm.get('gespecialtynder').errors?.required && editDoctorForm.get('specialty').dirty">This field is required</span>
+        </div>
+
+        <!-- about you -->
+        <label><b>About you</b></label>
+        <div>
+            <textarea type="text-area" name="description" class="form-control" formControlName="description" placeholder="Tell your patients about you"></textarea>
+        </div>
+
+        <button type="submit" value="Submit" > Submit </button>
+
+    </form>
+    
+    <p>
+        {{ editDoctorForm.value | json }} 
+    </p>
+</div>
+
+<router-outlet></router-outlet>

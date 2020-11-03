@@ -1,0 +1,62 @@
+<h2 class="display-4">Select time period:</h2>
+<div class="container mt-5"> 
+    <form [formGroup]="avgForm" >
+
+        <!-- select start date  -->
+        <label><b>From : </b></label>
+        <div class="container">
+            <div class="row">
+               <div class='col-sm-6'>
+                  <div class="form-group">
+                     <div class='input-group date' id='datetimepicker3'>
+                        <input class="form-control" formControlName="fromDate" type='date' placeholder="YYYY-MM-DD"/>
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <script type="text/javascript">
+                  $(function () {
+                      $('#datetimepicker3').datetimepicker({
+                          format: 'LT'
+                      });
+                  });
+               </script>
+            </div>
+         </div>
+
+        <!-- select end date -->
+         <label><b>To : </b></label>
+        <div class="container">
+            <div class="row">
+               <div class='col-sm-6'>
+                  <div class="form-group">
+                     <div class='input-group date' id='datetimepicker3'>
+                        <input class="form-control" formControlName="toDate" type='date' placeholder="YYYY-MM-DD"/>
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <script type="text/javascript">
+                  $(function () {
+                      $('#datetimepicker3').datetimepicker({
+                          format: 'LT'
+                      });
+                  });
+               </script>
+            </div>
+         </div>
+
+   
+    <button type="button" class="btn btn-secondary btn-sm" (click)="goToPage('patientprofile/mymeasurements/myaverages/averag-glucose-level')" > Show glucose levels graph</button>
+    <p></p>
+    <button type="button" class="btn btn-secondary btn-sm" (click)="goToPage('patientprofile/mymeasurements/myaverages/average-carb-intake')" > Show carb intake graph </button>
+</form>
+
+
+    <router-outlet></router-outlet>
+
+ 

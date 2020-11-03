@@ -1,0 +1,34 @@
+<p><b>Your personal information:</b></p>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <!-- <th scope="col">Full Name</th> -->
+        <th scope="col">Username</th>
+        <th scope="col">ID</th>
+        <!-- <th scope="col">Specialty</th>
+        <th scope="col">Description</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <!-- <td> name </td> -->
+        <td> {{ username }} </td>
+        <td> {{ id }} </td>
+        <!-- <td> specialty </td>
+        <td> description </td> -->
+      </tr>
+    </tbody>
+</table>
+
+<button style=" background-color: #BA171C;
+                color: white;
+                padding: 15px 32px; 
+                text-align: center; 
+                display: inline-block; 
+                font-size: 20px; 
+                margin: 4px 2px; 
+                cursor: pointer;" (click)="deactivateAccount()">Deactivate account</button>
+                <!-- add on click function deactivateAccount()-->
+
+<router-outlet></router-outlet> 

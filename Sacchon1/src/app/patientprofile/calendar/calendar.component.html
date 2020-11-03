@@ -1,0 +1,100 @@
+<h3>Next consultation: </h3>
+<h1> id =  {{ id1 }} </h1>
+<h4>Your consultations: </h4>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"> Date </th>
+      <th scope="col"> Consultation </th>
+      <th scope="col"> Edits </th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let consultation of loops;let i = index">
+          <tr>
+              <th scope="row"> {{ i+1 }} </th>
+              <td> {{ consultation.date }} </td>
+              <td> {{ consultation.consultation }} </td>
+              <td> {{ consultation.edit }} </td>
+          </tr>
+  </tbody>
+</table>
+
+<div class="wrapper">
+    <main>
+      <div class="toolbar">
+        <div class="current-month">November 2020</div>
+
+      </div>
+      <div class="calendar">
+        <div class="calendar__header">
+          <div>mon</div>
+          <div>tue</div>
+          <div>wed</div>
+          <div>thu</div>
+          <div>fri</div>
+          <div>sat</div>
+          <div>sun</div>
+        </div>
+        <div class="calendar__week">
+            <div class="calendar__day day">26</div>
+            <div class="calendar__day day">27</div>
+            <div class="calendar__day day">28</div>
+            <div class="calendar__day day">29</div>
+            <div class="calendar__day day">30</div>
+            <div class="calendar__day day">31</div>
+            <div class="calendar__day day">1</div>
+          </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">2</div>
+          <div class="calendar__day day">3</div>
+          <div class="calendar__day day">4</div>
+          <div class="calendar__day day">5</div>
+          <div class="calendar__day day">6</div>
+          <div class="calendar__day day">7</div>
+          <div class="calendar__day day">8</div>
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">9</div>
+          <div class="calendar__day day">10</div>
+          <div class="calendar__day day">11</div>
+          <div class="calendar__day day">12</div>
+          <div class="calendar__day day">13</div>
+          <div class="calendar__day day">14</div>
+          <div class="calendar__day day">15</div>        
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">16</div>
+          <div class="calendar__day day">17</div>
+          <div class="calendar__day day">18</div>
+          <div class="calendar__day day">19</div>
+          <div class="calendar__day day">20</div>
+          <div class="calendar__day day">21</div>
+          <div class="calendar__day day">22</div>    
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">23</div>
+          <div class="calendar__day day">24</div>
+          <div class="calendar__day day">25</div>
+          <div class="calendar__day day">26</div>
+          <div class="calendar__day day">27</div> 
+          <div class="calendar__day day">28</div> 
+          <div class="calendar__day day">29</div> 
+        </div>
+        <div class="calendar__week">
+          <div class="calendar__day day">30</div>
+          <div class="calendar__day day">1</div>
+          <div class="calendar__day day">2</div>
+          <div class="calendar__day day">3</div>
+          <div class="calendar__day day">4</div> 
+          <div class="calendar__day day">5</div> 
+          <div class="calendar__day day">6</div> 
+        </div>
+      </div>
+    </main>
+
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,36 @@
+<div class="container mt-5"> 
+    <!-- <h1> id =  {{ id }} </h1> -->
+    <form [formGroup]="measurementsForm" (submit)="formSubmit(measurementsForm)">
+
+        <!-- glucose -->
+        <div class="form-group">
+            <label><b>Blood Glucose Level</b></label>
+            <input type="number" class="form-control" placeholder="Your measurement in mg/dL" formControlName="glucoseLevel"/>
+            <span class="text-danger" *ngIf="measurementsForm.get('glucoseLevel').errors?.required && measurementsForm.get('glucoseLevel').dirty">This field is required</span>
+
+        </div>
+
+        <!-- carbs -->
+        <div class="form-group">
+            <label><b>Carbohydrates</b></label>
+            <input type="number" class="form-control" placeholder="Your carb intake in grams" formControlName="carbIntake"/>    
+            <span class="text-danger" *ngIf="measurementsForm.get('carbIntake').errors?.required && measurementsForm.get('carbIntake').dirty">This field is required</span>
+        </div>
+
+        <!-- meds -->
+        <div class="form-group">
+            <label><b>Medication</b></label>
+            <input type="text" class="form-control" placeholder="Your medication" formControlName="meds"/>
+        </div>
+
+        <button type="submit" value="Submit" > Submit </button>
+
+    </form>
+
+    <p>
+        {{ measurementsForm.value | json }} 
+    </p>
+
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,96 @@
+<div class="container mt-5"> 
+    <form [formGroup]="signUpForm" (submit)="formSubmit(signUpForm)">
+
+        <!-- full name -->
+        <div class="form-group">
+            <label><b>Full name</b></label>
+            <input type="text" class="form-control" placeholder="Your full name" formControlName="name"/>
+            <span class="text-danger" *ngIf="signUpForm.get('name').errors?.required && signUpForm.get('name').dirty">This field is required</span>
+        </div>
+
+        <!-- username -->
+        <div class="form-group">
+            <label><b>Username</b></label>
+            <input type="text" class="form-control" placeholder="Your username" formControlName="username"/>
+            <span class="text-danger" *ngIf="signUpForm.get('username').errors?.required && signUpForm.get('username').dirty">This field is required</span>
+        </div>
+
+        <!-- password -->
+        <div class="form-group">
+            <label><b>Password</b></label>
+            <input type="password" class="form-control" placeholder="Your password" formControlName="password"/>
+            <span class="text-danger" *ngIf="signUpForm.get('password').errors?.required && signUpForm.get('password').dirty">This field is required</span>
+        </div>
+
+        <!-- gender -->
+        <div class="form-group">
+            <label><b>Gender</b></label>
+            <div>
+                <label>Male</label>
+                <input class="form-control" formControlName="gender" type="radio" id="male" name="gender" value="MALE">
+            </div>
+            <div>
+                <label>Female</label>
+                <input class="form-control" formControlName="gender" type="radio" id="female" name="gender" value="FEMALE">    
+            </div>
+            <!-- <div>
+                <input class="form-control" formControlName="gender" type="radio" id="other" name="gender" value="other">
+                <label>Other</label>
+            </div>
+            <span class="text-danger" *ngIf="signUpForm.get('gender').errors?.required && signUpForm.get('gender').dirty">This field is required</span> -->
+        </div>
+
+        <!-- dob -->
+        <label><b>Date of birth</b></label>
+        <div class="container">
+            <div class="row">
+               <div class='col-sm-6'>
+                  <div class="form-group">
+                     <div class='input-group date' id='datetimepicker3'>
+                        <input class="form-control" formControlName="dob" type='date' placeholder="YYYY-MM-DD"/>
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+               <script type="text/javascript">
+                  $(function () {
+                      $('#datetimepicker3').datetimepicker({
+                          format: 'LT'
+                      });
+                  });
+               </script>
+            </div>
+         </div>
+
+        <!-- height -->
+        <div class="form-group">
+            <label><b>Height</b></label>
+            <input type="number" class="form-control" placeholder="Your height in cm" formControlName="height"/>
+        </div>
+        
+        <!-- weight -->
+        <div class="form-group">
+            <label><b>Weight</b></label>
+            <input type="number" class="form-control" placeholder="Your weight in kg" formControlName="weight"/>
+        </div>
+
+        <!-- history -->
+        <label><b>Medical history</b></label>
+        <div class="form-group">
+            <textarea type="text-area" name="history" class="form-control" formControlName="history" placeholder="Your medical history"></textarea>
+        </div>
+
+        <!-- <input type="submit" value="Submit" /> -->
+        <button type="submit" value="Submit" > Submit </button>
+
+    </form>
+
+    <p>
+        {{ signUpForm.value | json }} 
+    </p>
+    
+</div>
+
+<router-outlet></router-outlet>
